@@ -1,0 +1,146 @@
+
+@use './mediaQuery.scss' as m;
+
+//--- Custom CSS Reset ---
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  max-width: 100%;
+  overflox-x: hidden;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+//--- Font ---
+$ff_primary: 'Poppins', sans-serif;
+$ff_body: $ff_primary;
+$ff_heading: $ff_primary;
+
+//--- Font Weight ---
+$fw_reg: 400;
+$fw_semi: 500;
+$fw_bold: 700;
+
+//--- Font Size ---
+$fs_300: .8125rem;
+$fs_400: .875rem;
+$fs_500: 1rem;
+$fs_600: 1.875rem;
+$fs_700: 2.5rem;
+
+//--- Colors ---
+$light_gray: #EDEDED;
+$mid_gray: #666666;
+$silver: #BABABA;
+
+//--- Mobile ---
+@include m.breakpoint(medium) {
+  //--- Main ---
+  body {
+    font-family: $ff_primary;
+    color: $light_gray;
+    background: $silver;
+    z-index: 0;
+    width: 100vw;
+  }
+
+  //--- Hamburger Menu ---
+  //--- Menu ---
+  .menu,
+  .close {
+    display: flex;
+    flex-direction: column;
+    height: 1.5rem;
+    padding: 1rem 0 0 1rem;
+    z-index: 2;
+
+    .bar {
+      background: white;
+      color: white;
+      width: 2rem;
+      height: .3rem;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .top {
+      margin-bottom: .3rem;
+    }
+
+    .bot {
+      margin-top: .3rem;
+    }
+  }
+
+  //--- Close Button ---
+  .close {
+
+    .bar {
+      transition: all 0.4s ease-in-out;
+    }
+
+    .top {
+      transform: translateY(10px);
+    }
+
+    .mid {
+      opacity: 0;
+    }
+
+    .bot {
+      transform: translateY(-10px);
+    }
+  }
+  
+  //--- Navigation ---
+  .navClose,
+  .navOpen {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    padding-left: 2rem;
+    background: $silver;
+    z-index: 1;
+  }
+  .navClose {
+    transition: all 0.4s ease-in-out;
+    transform: translateX(-300px);
+  }
+  
+  .navOpen {
+    transition: all 0.4s ease-in-out;
+    transform: translateX(0px);
+  }
+
+  //--- Header ---
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    
+    h1 {
+      font-size: $fs_600;
+    }
+
+    p {
+      font-size: $fs_500;
+    }
+  }
+
+  //--- Footer ---
+  .footer {
+    background: $mid_gray;
+  }
+}
