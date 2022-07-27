@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom'
 
 export default function Nav() {
   let [toggle, setToggle] = React.useState(true)
+  let style = {
+    textDecoration: 'none',
+    color: 'rgb(237,237,237)',
+    fontSize: '2.5rem'
+  }
 
   function fTog() {
     setToggle(!toggle)
@@ -19,27 +24,9 @@ export default function Nav() {
       </div>
 
       <nav onClick={fTog} className={toggle ? 'navClose' : 'navOpen'}>
-        <Link to='/' style={
-          {
-            textDecoration: 'none',
-            color: 'rgb(237,237,237)',
-            fontSize: '2.5rem'
-          }
-        }>Home</Link>
-        <Link to='/projects' style={
-          {
-            textDecoration: 'none',
-            color: 'rgb(237,237,237)',
-            fontSize: '2.5rem'
-          }
-        }>Projects</Link>
-        <Link to='/contact' style={
-          {
-            textDecoration: 'none',
-            color: 'rgb(237,237,237)',
-            fontSize: '2.5rem'
-          }
-        }>Contact</Link>
+        <Link to='/' style={style}>Home</Link>
+        <Link to='/projects' style={style}>Projects</Link>
+        <Link to='/contact' style={style}>Contact</Link>
       </nav>
     </>
   )
