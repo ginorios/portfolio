@@ -11,7 +11,7 @@ export default function Home() {
 
         <h1>Hey, I'm Gino</h1>
         <p>Web Developer</p>
-        <p>Coffee Poser</p>
+        <p>Coffee Ninja</p>
 
       </div>
 

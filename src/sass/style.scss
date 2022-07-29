@@ -110,19 +110,19 @@ $silver: #BABABA;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    width: 90%;
-    padding-left: 2rem;
+    width: 96%;
+    padding-left: 1rem;
     background: $silver;
     z-index: 1;
   }
   .navClose {
-    transition: all 0.4s ease-in-out;
-    transform: translateX(-400px);
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   
   .navOpen {
-    transition: all 0.4s ease-in-out;
-    transform: translateX(0px);
+    transition: all 0.5s ease-in-out;
   }
 
   //--- Header ---
@@ -145,11 +145,32 @@ $silver: #BABABA;
 
   //--- Section ---
   .section {
+    padding: 17.5% 0 0 0;
+    justify-content: flex-start;
 
+    .projGif {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      background: $mid_gray;
+    }
+
+    .projTitle,
+    .projLink,
+    .projDesc {
+      padding: 0.5rem;
+    }
+
+    .projLink {
+      text-decoration: none;
+      color: $light_gray;
+    }
   }
 
   //--- Footer ---
   .footer {
     background: $mid_gray;
   }
+
 }

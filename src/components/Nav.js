@@ -23,10 +23,10 @@ export default function Nav() {
         <div className='bar bot'></div>
       </div>
 
-      <nav onClick={fTog} className={toggle ? 'navClose' : 'navOpen'}>
-        <Link to='/' style={style}>Home</Link>
-        <Link to='/projects' style={style}>Projects</Link>
-        <Link to='/contact' style={style}>Contact</Link>
+      <nav className={toggle ? 'navClose' : 'navOpen'}>
+        <Link onClick={fTog} to='/' style={style}>Home</Link>
+        <Link onClick={fTog} to='/projects' style={style}>Projects</Link>
+        <Link onClick={fTog} to='/contact' style={style}>Contact</Link>
       </nav>
     </>
   )
