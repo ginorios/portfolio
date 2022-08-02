@@ -1,19 +1,53 @@
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Nav() {
   let [toggle, setToggle] = React.useState(true)
+
+  let [current, setCurrent] = React.useState(false)
+  
+  /*
+  let [width, setWidth] = React.useState({
+    winWidth: window.innerWidth
+  })
+
+  //Window width
+  function fWidth() {
+    setWidth({ winWidth: window.innerWidth })
+
+    if(width < 699) {
+      setCurrent(!current)
+    } if(width > 700) {
+      setCurrent(current)
+    }
+  }
+
+  useEffect(() => {
+
+    window.addEventListener('resize', fWidth)
+
+    return () => {
+      window.removeEventListener('resize', fWidth)
+    }
+  }, [width])
+  */
+
   let style = {
     textDecoration: 'none',
     color: 'rgb(237,237,237)',
-    fontSize: '2.5rem'
+    margin: '0 0 0 0.5rem',
+    fontSize: current ? '2.5rem' : '1.5rem'
   }
+
+  /*
+  console.log(width.winWidth)
+  console.log(style.fontSize)
+  */
 
   function fTog() {
     setToggle(!toggle)
   }
-  console.log(toggle)
 
   return (
     <>
