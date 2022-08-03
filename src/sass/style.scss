@@ -34,6 +34,7 @@ $fw_bold: 700;
 //--- Font Size ---
 $fs_300: .8125rem;
 $fs_400: .875rem;
+$fs_450: 1.25rem;
 $fs_500: 1.5625rem;
 $fs_600: 1.875rem;
 $fs_700: 2.1875rem;
@@ -46,11 +47,78 @@ $silver: #BABABA;
 
 //--- Mobile ---
 @include m.breakpoint(medium) {
+  //--- Global ---
+  body,
+  .navClose,
+  .navOpen {
+    background: $silver;
+  }
+
+  body,
+  .projLink {
+    color: $light_gray;
+  }
+
+  .menu,
+  .close,
+  .navClose,
+  .navOpen {
+    position: absolute;
+  }
+
+  .menu,
+  .close,
+  .navClose,
+  .navOpen,
+  .header,
+  .section,
+  .footer,
+  .projGif {
+    display: flex;
+  }
+
+  .navClose,
+  .navOpen,
+  .header,
+  .section,
+  .footer,
+  .projGif {
+    justify-content: center;
+  }
+
+  .menu,
+  .close,
+  .navClose,
+  .navOpen,
+  .header,
+  .section,
+  .footer {
+    flex-direction: column;
+  }
+
+  .navClose,
+  .navOpen,
+  .header,
+  .section,
+  .footer {
+    height: 100vh;
+    padding-left: 1rem;
+  }
+
+  .bar,
+  .navClose,
+  .navOpen {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .projGif,
+  .footer {
+    background: $mid_gray;
+  }
+
   //--- Main ---
   body {
     font-family: $ff_primary;
-    color: $light_gray;
-    background: $silver;
     z-index: 0;
     width: 100vw;
   }
@@ -59,9 +127,6 @@ $silver: #BABABA;
   //--- Menu ---
   .menu,
   .close {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
     height: 1.5rem;
     padding: 1rem 0 1rem 1rem;
     z-index: 2;
@@ -71,7 +136,6 @@ $silver: #BABABA;
       color: white;
       width: 2rem;
       height: .3rem;
-      transition: all 0.4s ease-in-out;
     }
 
     .top {
@@ -85,10 +149,6 @@ $silver: #BABABA;
 
   //--- Close Button ---
   .close {
-
-    .bar {
-      transition: all 0.4s ease-in-out;
-    }
 
     .top {
       transform: translateY(10px);
@@ -106,38 +166,15 @@ $silver: #BABABA;
   //--- Navigation ---
   .navClose,
   .navOpen {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
     width: 96%;
-    padding-left: 1rem;
-    background: $silver;
     z-index: 1;
   }
   .navClose {
-    transition: all 0.5s ease-in-out;
     transform: translateX(-100%);
     opacity: 0;
   }
-  
-  .navOpen {
-    transition: all 0.5s ease-in-out;
-  }
 
   //--- Header ---
-  .header,
-  .section,
-  .footer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 100vh;
-    padding-left: 1rem;
-
-  }
-
   .header {
     h1 {
       font-size: $fs_600;
@@ -150,11 +187,8 @@ $silver: #BABABA;
     justify-content: flex-start;
 
     .projGif {
-      display: flex;
-      justify-content: center;
       align-items: center;
       height: 30vh;
-      background: $mid_gray;
     }
 
     .projTitle,
@@ -165,18 +199,19 @@ $silver: #BABABA;
 
     .projLink {
       text-decoration: none;
-      color: $light_gray;
     }
-  }
-
-  //--- Footer ---
-  .footer {
-    background: $mid_gray;
   }
 
 }
 
 @include m.breakpoint(large) {
+
+  //--- Global ---
+  p,
+  a {
+    font-size: $fs_450;
+  }
+
   //--- Menu ---
   .menu,
   .close {
@@ -193,7 +228,7 @@ $silver: #BABABA;
     height: 10vh;
     width: 97.8vw;
     transform: translateX(0);
-    opacity: 100;
+    opacity: 1;
     background-color: transparent;
     //border: 1px solid black;
   }
@@ -202,10 +237,6 @@ $silver: #BABABA;
   .header {
     h1 {
       font-size: $fs_800;
-    }
-
-    p {
-      font-size: $fs_500;
     }
 
   }
@@ -220,15 +251,5 @@ $silver: #BABABA;
       padding: 0 1rem;
     }
   }
-
-  //--- Footer ---
-  .footer {
-    p {
-      font-size: $fs_500;
-    }
-  }
-
-
-
 
 }
