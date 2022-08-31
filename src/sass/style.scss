@@ -221,11 +221,11 @@ $silver: #BABABA;
       display: flex;
       align-items: center;
       flex-direction: row;
-      width: 20%;
+      width: 70%;
 
       .emailImg {
         padding-right: 1rem;
-        width: 15%;
+        width: 2.5rem;
         filter: invert(99%) sepia(0%) saturate(1319%) hue-rotate(116deg) brightness(115%) contrast(86%);
       }
 
@@ -281,5 +281,6 @@ $silver: #BABABA;
       padding: 0 1rem;
     }
   }
+
 
 }
