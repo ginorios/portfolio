@@ -55,7 +55,8 @@ $silver: #BABABA;
   }
 
   body,
-  .projLink {
+  .projLink,
+  a {
     color: $light_gray;
   }
 
@@ -111,9 +112,14 @@ $silver: #BABABA;
     transition: all 0.5s ease-in-out;
   }
 
-  .projGif,
+  .projLink,
   .footer {
     background: $mid_gray;
+  }
+
+  .projLink,
+  a {
+    text-decoration: none;
   }
 
   //--- Main ---
@@ -188,7 +194,9 @@ $silver: #BABABA;
 
     .projGif {
       align-items: center;
-      height: 30vh;
+      height: 45vh;
+      width: 100%;
+      margin-bottom: 1rem;
     }
 
     .projTitle,
@@ -197,8 +205,30 @@ $silver: #BABABA;
       padding: 0.5rem;
     }
 
+    .projTitle {
+      padding: 1rem 0.5rem 0 0.5rem;
+    }
+
     .projLink {
-      text-decoration: none;
+      border: 1px solid $mid_gray;
+    }
+  }
+
+  //--- Footer ---
+  .footer {
+    align-items: flex-start;
+    .email {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      width: 20%;
+
+      .emailImg {
+        padding-right: 1rem;
+        width: 15%;
+        filter: invert(99%) sepia(0%) saturate(1319%) hue-rotate(116deg) brightness(115%) contrast(86%);
+      }
+
     }
   }
 
