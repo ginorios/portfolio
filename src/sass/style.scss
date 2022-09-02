@@ -74,7 +74,8 @@ $silver: #BABABA;
   .header,
   .section,
   .footer,
-  .projGif {
+  .projGif,
+  .projDisplay::after {
     display: flex;
   }
 
@@ -93,7 +94,8 @@ $silver: #BABABA;
   .navOpen,
   .header,
   .section,
-  .footer {
+  .footer,
+  .projDisplay::after{
     flex-direction: column;
   }
 
@@ -201,7 +203,8 @@ $silver: #BABABA;
 
     .projTitle,
     .projLink,
-    .projDesc {
+    .projDesc,
+    .projDisplay::after {
       padding: 0.5rem;
     }
 
@@ -212,6 +215,13 @@ $silver: #BABABA;
     .projLink {
       border: 1px solid $mid_gray;
     }
+
+    .projDisplay::after {
+      content: 'Still creating... Most projects are offline.';
+      font-size: $fs_500;
+      margin-top: 5rem;
+    }
+
   }
 
   //--- Footer ---
